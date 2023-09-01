@@ -5,7 +5,7 @@ from pages.product_page import ProductPage
 from pages.basket_page import BasketPage
 from pages.locators import ProductPageLocators
 
-f = faker.Faker()
+fake = faker.Faker()
 
 
 def go_to_login_page(self):
@@ -115,7 +115,7 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
 class TestUserAddToBasketFromProductPage:
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
-        e_mail = f.email()
+        e_mail = fake.email()
         link = 'http://selenium1py.pythonanywhere.com/en-gb/accounts/login/'
         page = LoginPage(browser, link)
         page.open()
