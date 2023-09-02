@@ -1,9 +1,9 @@
 import pytest
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 
-s = Service('C:\\chromedriver\\chromedriver.exe')
 
 
 def pytest_addoption(parser):
@@ -16,7 +16,7 @@ def browser(request):
     options = Options()
     options.add_experimental_option('prefs', {'intl.accept_languages': language})
     print("\nstart browser for test..")
-    browser = webdriver.Chrome(service=s, options=options)
+    browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     yield browser
     print("\nquit browser..")
     browser.quit()
