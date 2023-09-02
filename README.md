@@ -11,3 +11,20 @@
 - `tests/` - директория с тестами
 
 
+## Установка и настройка
+
+1. Создайте виртуальное окружение:
+   ```shell
+   python -m venv venv && cd venv
+   
+2. Клонируйте репозиторий
+   ```shell
+   git clone https://github.com/MaksimPopovv/UI_tests.git && cd UI_tests
+
+3. Установите зависимости из файла requirements.txt:
+   ```shell
+   pip install -r requirements.txt
+
+4. Для запуска тестов используйте команду:
+   ```shell
+   pytest -v --tb=line
